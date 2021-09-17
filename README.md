@@ -4,7 +4,7 @@
 
 3D都市モデルの品質管理支援のための位相一貫性検証機能です。
 
-本ソフトウェアは、国土交通省の[Project PLATEAU](https://www.mlit.go.jp/plateau/)で開発した[品質評価システム](https://github.com/Project-PLATEAU/CityGML-evaluation-system)で利用した、3D都市モデルの位相一貫性検証機能（FME Workspace）です。対応データ形式は[OGC CityGML 2.0](https://www.ogc.org/standards/citygml)形式です。また、CityGMLの拡張仕様であるADE（Application Domain Extension）にも対応しており、内閣府地方創生推進事務局が定めた[i-都市再生技術仕様案 v1.4 (iｰUR 1.4)](https://www.kantei.go.jp/jp/singi/tiiki/toshisaisei/itoshisaisei/iur/)などにも対応可能です。
+本ソフトウェアは、国土交通省の[Project PLATEAU](https://www.mlit.go.jp/plateau/)で開発した[品質評価システム](https://github.com/Project-PLATEAU/CityGML-evaluation-system)で利用した、3D都市モデルの位相一貫性検証機能（FME Workspace）です。対応データ形式は[OGC CityGML 2.0](https://www.ogc.org/standards/citygml)形式です。また、CityGMLの拡張仕様であるADE（Application Domain Extension）にも対応しており、内閣府地方創生推進事務局が定めた[i-都市再生技術仕様案 v1.4 (iｰUR 1.4)](https://www.chisou.go.jp/tiiki/toshisaisei/itoshisaisei/iur/)などにも対応可能です。
 
 本ソフトウェアの動作には前提ソフトウェア（商用ソフトウェア）が必要で、単独では利用できません。位相一貫性検証機能の実装例として参考にして下さい。
 
