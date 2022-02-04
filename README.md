@@ -6,11 +6,53 @@
 
 本ソフトウェアは、国土交通省の[Project PLATEAU](https://www.mlit.go.jp/plateau/)で開発した[品質評価システム](https://github.com/Project-PLATEAU/CityGML-evaluation-system)で利用した、3D都市モデルの位相一貫性検証機能（FME Workspace）です。対応データ形式は[OGC CityGML 2.0](https://www.ogc.org/standards/citygml)形式です。また、CityGMLの拡張仕様であるADE（Application Domain Extension）にも対応しており、内閣府地方創生推進事務局が定めた[i-都市再生技術仕様案 v1.4 (iｰUR 1.4)](https://www.chisou.go.jp/tiiki/toshisaisei/itoshisaisei/iur/)などにも対応可能です。
 
-ただし、i-UR1.4は、名前空間及びXMLSchemaファイルの所在が変更されたことに伴い、i-UR1.5に改定されました。  
-本ソフトウェア内における名前空間及びXMLSchemaファイルの所在は改定前の記述となっていますので、ご注意ください。  
-以下に示す2点を実施し、改定後の記述に更新いただくことで、引き続きご利用いただけます。
-* http://www.kantei.go.jp/jp/singi/ を https://www.chisou.go.jp/ に更新する。
-* i-URの版を、1.4 から 1.5 に更新する。
+
+**ただし、i-UR1.4は2021年9月にi-UR1.5に改定されました。これに伴い、URLが変更されました。**
+
+そのため、本ソフトウェアの利用にあたり、3D都市モデル（CityGML形式）及びソフトウェアに記述された旧URLを新しいURLに更新する必要があります。
+
+具体的には以下の手順に従い、更新してください。
+
+## 1．3D都市モデル（CityGML形式）に記述されたURLの更新
+
+3D都市モデルのファイル内の名前空間とschemaLocationに記載されている旧URLを新しいURLに更新（テキスト置換）してください。
+
+対象となる記述を下表に示します。
+
+- 名前空間
+
+|旧URL（i-UR1.4のURL）|新しいURL（i-UR1.5のURL）|
+| - | - |
+|`http://www.kantei.go.jp/jp/singi/tiiki/toshisaisei/itoshisaisei/iur/uro/1.4`|https://www.chisou.go.jp/tiiki/toshisaisei/itoshisaisei/iur/uro/1.5|
+|`http://www.kantei.go.jp/jp/singi/tiiki/toshisaisei/itoshisaisei/iur/urf/1.4`|https://www.chisou.go.jp/tiiki/toshisaisei/itoshisaisei/iur/urf/1.5|
+|`http://www.kantei.go.jp/jp/singi/tiiki/toshisaisei/itoshisaisei/iur/urg/1.4`|https://www.chisou.go.jp/tiiki/toshisaisei/itoshisaisei/iur/urg/1.5|
+|`http://www.kantei.go.jp/jp/singi/tiiki/toshisaisei/itoshisaisei/iur/urt/1.4`|https://www.chisou.go.jp/tiiki/toshisaisei/itoshisaisei/iur/urt/1.5|
+
+- schemaLocation
+
+|旧URL（i-UR1.4のURL）|新しいURL（i-UR1.5のURL）|
+| - | - |
+|`http://www.kantei.go.jp/jp/singi/tiiki/toshisaisei/itoshisaisei/iur/schemas/uro/1.4/urbanObject.xsd`|https://www.chisou.go.jp/tiiki/toshisaisei/itoshisaisei/iur/schemas/uro/1.5/urbanObject.xsd|
+|`http://www.kantei.go.jp/jp/singi/tiiki/toshisaisei/itoshisaisei/iur/schemas/urf/1.4/urbanFunction.xsd`|https://www.chisou.go.jp/tiiki/toshisaisei/itoshisaisei/iur/schemas/uro/1.5/urbanFunction.xsd|
+|`http://www.kantei.go.jp/jp/singi/tiiki/toshisaisei/itoshisaisei/iur/schemas/urg/1.4/statisticalGrid.xsd`|https://www.chisou.go.jp/tiiki/toshisaisei/itoshisaisei/iur/schemas/urg/1.5/statisticalGrid.xsd|
+|`http://www.kantei.go.jp/jp/singi/tiiki/toshisaisei/itoshisaisei/iur/schemas/urg/1.4/publicTransit.xsd`|https://www.chisou.go.jp/tiiki/toshisaisei/itoshisaisei/iur/schemas/urg/1.5/publicTransit.xsd|
+
+## 2．ソフトウェアに記述されたURL及びバージョンの更新
+
+FME Workbenchspaceにおいて本スクリプトを実行する際、Transportation Parameter ValuesでAdditional ADE Schema File(s)をURLで指定している場合は、新しいschemaLocationのURLを指定する必要があります。
+
+（指定していない場合は、更新の必要はありません）
+
+- schemaLocation
+
+|旧URL（i-UR1.4のURL）|新しいURL（i-UR1.5のURL）|
+| - | - |
+|`http://www.kantei.go.jp/jp/singi/tiiki/toshisaisei/itoshisaisei/iur/schemas/uro/1.4/urbanObject.xsd`|https://www.chisou.go.jp/tiiki/toshisaisei/itoshisaisei/iur/schemas/uro/1.5/urbanObject.xsd|
+|`http://www.kantei.go.jp/jp/singi/tiiki/toshisaisei/itoshisaisei/iur/schemas/urf/1.4/urbanFunction.xsd`|https://www.chisou.go.jp/tiiki/toshisaisei/itoshisaisei/iur/schemas/uro/1.5/urbanFunction.xsd|
+|`http://www.kantei.go.jp/jp/singi/tiiki/toshisaisei/itoshisaisei/iur/schemas/urg/1.4/statisticalGrid.xsd`|https://www.chisou.go.jp/tiiki/toshisaisei/itoshisaisei/iur/schemas/urg/1.5/statisticalGrid.xsd|
+|`http://www.kantei.go.jp/jp/singi/tiiki/toshisaisei/itoshisaisei/iur/schemas/urg/1.4/publicTransit.xsd`|https://www.chisou.go.jp/tiiki/toshisaisei/itoshisaisei/iur/schemas/urg/1.5/publicTransit.xsd|
+
+
 
 また、本ソフトウェアの動作には前提ソフトウェア（商用ソフトウェア）が必要で、単独では利用できません。位相一貫性検証機能の実装例として参考にして下さい。
 
